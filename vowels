@@ -1,0 +1,28 @@
+// Write a function, countVowels, that accepts a string as an argument and returns the number of vowels in that string.
+// Use recursion.
+function isVowels(ch) {
+
+    ch=ch.toUpperCase(ch)    
+    return (ch=='A' || ch=='E' || ch=='I' ||
+    ch=='O' || ch=='U');
+}
+
+function countVowels(string,n) {
+ //   console.log(string);
+    if (n==1){
+ //   console.log(str[n-1]);
+    return isVowels(str[n-1]);
+    }
+    else {
+ //   console.log(str[n-1]);
+    return countVowels(str,n-1)+ isVowels(str[n-1]);
+  
+    }
+}
+
+
+let str = "Four score and seven years";
+ // => 
+ console.log("length of string", str.length)
+let count =countVowels(str,str.length);
+console.log("Number of vowels", count);
